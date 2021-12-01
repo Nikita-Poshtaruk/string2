@@ -1,0 +1,22 @@
+#include <iostream>
+#include <cstring>
+#include <cctype>
+
+using namespace std;
+
+char prop(char arr[]);
+char prop(char arr[]) {
+	for (int i = 0; arr[i]; i++)
+	{
+		arr[i] = toupper(arr[i]);
+		cout << arr[i];
+	}
+	return 0;
+}
+int main() {
+	char str[100];
+
+	cin >> str;
+	cout << prop(str);
+
+}
