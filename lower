@@ -1,0 +1,27 @@
+#include <iostream>
+#include <wctype.h>
+#include <cwchar>
+
+
+void make_string_lower(wchar_t* str)
+{
+    while (*str != L'\0')
+    {
+        if (iswalpha(*str) && !iswlower(*str))
+        {
+            const auto l = towlower(*str);
+            *str = l;
+        }
+
+        ++str;
+    }
+}
+
+int main()
+{
+    wchar_t test[] = L"FolDEr1";
+
+    make_string_lower(test);
+
+    std::wcout << L"lower: " << test << std::endl;
+}
